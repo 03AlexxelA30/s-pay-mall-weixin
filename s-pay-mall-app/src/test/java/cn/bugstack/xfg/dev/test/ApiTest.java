@@ -24,6 +24,7 @@ import java.util.Scanner;
 @Slf4j
 public class ApiTest {
 
+    // 换成自己的 appid、secret；https://mp.weixin.qq.com/debug/cgi-bin/sandboxinfo?action=showinfo&t=sandbox/index
     private static final String APPID = "wx5a228ff69e28a91f";
     private static final String SECRET = "0bea03aa1310bac050aae79dd8703928";
     private static final String GRANT_TYPE = "client_credential";
