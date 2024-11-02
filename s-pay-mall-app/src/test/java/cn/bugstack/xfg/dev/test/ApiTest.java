@@ -15,6 +15,11 @@ import java.util.Scanner;
 
 /**
  * 模板消息案例
+ * 打开微信公众号，测试平台。https://mp.weixin.qq.com/debug/cgi-bin/sandboxinfo?action=showinfo&t=sandbox/index 新增加一个模板消息，结构如下；
+ *
+ * 项目：{{repo_name.DATA}} 分支：{{branch_name.DATA}} 作者：{{commit_author.DATA}} 说明：{{commit_message.DATA}}
+ *
+ * 创建后，你会获得一个 template_id
  */
 @Slf4j
 public class ApiTest {
@@ -33,7 +38,9 @@ public class ApiTest {
         TemplateMessageDTO.put(data, TemplateMessageDTO.TemplateKey.COMMIT_AUTHOR, "fuzhengwei");
         TemplateMessageDTO.put(data, TemplateMessageDTO.TemplateKey.COMMIT_MESSAGE, "feat: 抽奖订单功能实现");
 
-        // 通知结构 touser 关注你的公众号，获得你自己的ID，否则消息不会发给自己
+        // 通知结构
+        // touser 关注你的公众号，获得你自己的ID，否则消息不会发给自己
+        // template_id 模板id，换成你自己的
         TemplateMessageDTO templateMessageDTO = new TemplateMessageDTO("or0Ab6ivwmypESVp_bYuk92T6SvU", "l2HTkntHB71R4NQTW77UkcqvSOIFqE_bss1DAVQSybc");
         templateMessageDTO.setUrl("https://gaga.plus");
         templateMessageDTO.setData(data);
